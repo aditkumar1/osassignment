@@ -17,6 +17,8 @@ int main(int argc, char **argv)
     printf("File Size: \t\t%d bytes\n",fileStat.st_size);
     printf("Number of Links: \t%d\n",fileStat.st_nlink);
     printf("File inode: \t\t%d\n",fileStat.st_ino);
+	printf("File owner: \t\t%s\n",fileStat.st_uid);
+	printf("Group owner: \t\t%s\n",fileStat.st_gid);
 
     printf("File Permissions: \t");
     printf( (S_ISDIR(fileStat.st_mode)) ? "d" : "-");

@@ -49,8 +49,16 @@ int main(int argc, char **argv)
 			strcat(s, (fileStat.st_mode & S_IXOTH) ? "x" : "-");
 			strcpy(fileInfo[i].permission,s);
 			fileInfo[i].links=fileStat.st_nlink;
-			strcpy(fileInfo[i].username,getpwuid(fileStat.st_uid)->pw_name);
-			strcpy(fileInfo[i].grpname,getgrgid(fileStat.st_gid)->gr_name);
+			if(fileStat.st_uid<=0){
+				sprintf(fileInfo[i].username,"%d",fileStat.st_uid);	
+			}
+			else 
+				strcpy(fileInfo[i].username,getpwuid(fileStat.st_uid)->pw_name);
+			if(fileStat.st_gid<=0){
+				sprintf(fileInfo[i].grpname,"%d",fileStat.st_gid);	
+			}
+			else 
+				strcpy(fileInfo[i].grpname,getgrgid(fileStat.st_gid)->gr_name);
 			fileInfo[i].size=fileStat.st_size;
 			strftime(date, 20, "%b %d %R", localtime(&(fileStat.st_mtime)));;
 			strcpy(fileInfo[i].date, date);

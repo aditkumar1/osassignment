@@ -8,6 +8,7 @@
 #include <dirent.h>
 #include <string.h>
 
+//to store file info
 struct fileInfo {
    int blk_size;
    char permission[20];
@@ -90,25 +91,3 @@ int main(int argc, char **argv)
     	
     return 0;
 }
-/*
-printf(" %d",fileStat.st_blocks/2);
-			printf(" ");
-			printf( (S_ISDIR(fileStat.st_mode)) ? "d" : "-");
-			printf( (fileStat.st_mode & S_IRUSR) ? "r" : "-");
-			printf( (fileStat.st_mode & S_IWUSR) ? "w" : "-");
-			printf( (fileStat.st_mode & S_IXUSR) ? "x" : "-");
-			printf( (fileStat.st_mode & S_IRGRP) ? "r" : "-");
-			printf( (fileStat.st_mode & S_IWGRP) ? "w" : "-");
-			printf( (fileStat.st_mode & S_IXGRP) ? "x" : "-");
-			printf( (fileStat.st_mode & S_IROTH) ? "r" : "-");
-			printf( (fileStat.st_mode & S_IWOTH) ? "w" : "-");
-			printf( (fileStat.st_mode & S_IXOTH) ? "x" : "-");
-			printf(" %d",fileStat.st_nlink);
-			printf(" %s",getpwuid(fileStat.st_uid)->pw_name);
-			printf(" %s",getgrgid(fileStat.st_gid)->gr_name);
-			printf(" %d",fileStat.st_size);
-			strftime(date, 20, "%b %d %R", localtime(&(fileStat.st_atime)));;
-			printf(" %s", date);
-			printf(" %s",ep->d_name);
-			printf("\n");
-*/

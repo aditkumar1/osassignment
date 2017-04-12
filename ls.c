@@ -26,7 +26,7 @@ int main(int argc, char **argv)
 	int total_blk=0;
   	struct dirent *ep;
     struct fileInfo fileInfo[100],temp;
-    int i=0,j=0;
+    int i=0,j=0,k=0;
     struct stat fileStat;
     char date[20];
     char s[20];
@@ -64,7 +64,7 @@ int main(int argc, char **argv)
 	  	return 1;
 	  }
 	  //ordering according to name
-	  for(int k=1;k<i;k++){
+	  for(k=1;k<i;k++){
 	  	for(j=0;j<i-k;j++){
 	  		if(strcmp(fileInfo[j+1].name,fileInfo[j].name)<0){
 	  			temp=fileInfo[j];

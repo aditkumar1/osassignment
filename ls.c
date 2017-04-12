@@ -52,7 +52,7 @@ int main(int argc, char **argv)
 			strcpy(fileInfo[i].username,getpwuid(fileStat.st_uid)->pw_name);
 			strcpy(fileInfo[i].grpname,getgrgid(fileStat.st_gid)->gr_name);
 			fileInfo[i].size=fileStat.st_size;
-			strftime(date, 20, "%b %d %R", localtime(&(fileStat.st_atime)));;
+			strftime(date, 20, "%b %d %R", localtime(&(fileStat.st_mtime)));;
 			strcpy(fileInfo[i].date, date);
 			strcpy(fileInfo[i].name, ep->d_name);
 			i++;

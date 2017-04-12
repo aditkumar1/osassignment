@@ -82,7 +82,7 @@ int main(int argc, char **argv)
 			printf("%-11s",fileInfo[j].permission);
 			printf("%-4d",fileInfo[j].links);
 			printf("%-10s",fileInfo[j].username);
-			printf("%-10s",fileInfo[j].grpname);
+			printf("%-20s",fileInfo[j].grpname);
 			printf("%-10d",fileInfo[j].size);
 			printf("%-14s",fileInfo[j].date);
 			printf("%-10s",fileInfo[j].name);
